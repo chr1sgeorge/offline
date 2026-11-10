@@ -5,42 +5,72 @@
     <title>OFFLINE</title>
     <style>
         body { 
-            background-color: #4D4DCC; /* Outer retro blue */
-            color: #fff; 
-            font-family: monospace; 
-            text-align: center; 
-            padding-top: 15vh; 
-            margin: 0; 
+            background-color: #4D4DCC; /* The purple/blue background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
+            margin: 0;
+            font-family: monospace;
             box-sizing: border-box;
+            padding: 5vh 5vw; /* This shrinks the visible purple space by forcing the screen to take up more room */
         }
         .screen { 
-            border: 4px solid #000; /* Solid dark borders */
-            display: inline-block; 
-            padding: 50px 70px; 
-            background-color: #08084A; /* Inner dark navy */
-            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.6); /* Flat blocky shadow */
+            background-color: #08084A; 
+            width: 100%;
+            max-width: 900px;
+            padding: 60px 40px;
+            text-align: center;
+            border: 8px dotted #FDEE5F; /* Casino marquee lightbulb border */
+            border-radius: 20px;
+            box-shadow: 0 0 30px #FDEE5F, inset 0 0 40px rgba(0,0,0,0.8);
+            animation: marquee-flash 1s infinite alternate;
         }
         h1 { 
-            color: #FDEE5F; /* Bright yellow accent */
-            text-shadow: 2px 2px 0px #000;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            font-size: 2.2em;
+            color: #FF3366; /* Neon casino pink/red */
+            font-size: 2.8em;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px #fff, 0 0 20px #FF3366, 0 0 40px #FF3366;
+            animation: neon-flicker 3s infinite;
         }
         p {
             color: #E5E5E5;
+            font-size: 1.4em;
             line-height: 1.8;
-            font-size: 1.2em;
-            letter-spacing: 1px;
-            margin: 15px 0;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+            margin: 20px 0;
         }
         p:last-child {
-            color: #FDEE5F; /* Bright yellow accent */
-            text-shadow: 2px 2px 0px #000;
-            margin-top: 30px;
+            color: #FDEE5F;
+            font-size: 1.6em;
             font-weight: bold;
-            font-size: 1.3em;
+            margin-top: 50px;
+            text-shadow: 0 0 10px #FDEE5F, 0 0 20px #FDEE5F;
+            animation: pulse-glow 1.5s infinite alternate;
+        }
+
+        /* Animations */
+        @keyframes marquee-flash {
+            from { border-color: #FDEE5F; box-shadow: 0 0 20px #FDEE5F, inset 0 0 40px rgba(0,0,0,0.8); }
+            to { border-color: #FF3366; box-shadow: 0 0 40px #FF3366, inset 0 0 40px rgba(0,0,0,0.8); }
+        }
+        
+        @keyframes neon-flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #FF3366, 0 0 40px #FF3366;
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes pulse-glow {
+            from { text-shadow: 0 0 10px #FDEE5F, 0 0 20px #FDEE5F; transform: scale(1); }
+            to { text-shadow: 0 0 20px #FDEE5F, 0 0 40px #FDEE5F; transform: scale(1.05); }
         }
     </style>
 </head>
