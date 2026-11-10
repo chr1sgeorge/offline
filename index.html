@@ -5,7 +5,8 @@
     <title>OFFLINE</title>
     <style>
         body { 
-            background-color: #4D4DCC; /* The purple/blue background */
+            /* Changed to a dark vignette/night background to make the neon glow */
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%); 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -13,7 +14,7 @@
             margin: 0;
             font-family: monospace;
             box-sizing: border-box;
-            padding: 5vh 5vw; /* This shrinks the visible purple space by forcing the screen to take up more room */
+            padding: 5vh 5vw; 
         }
         .screen { 
             background-color: #08084A; 
@@ -21,13 +22,13 @@
             max-width: 900px;
             padding: 60px 40px;
             text-align: center;
-            border: 8px dotted #FDEE5F; /* Casino marquee lightbulb border */
+            border: 8px dotted #FDEE5F; 
             border-radius: 20px;
             box-shadow: 0 0 30px #FDEE5F, inset 0 0 40px rgba(0,0,0,0.8);
             animation: marquee-flash 1s infinite alternate;
         }
         h1 { 
-            color: #FF3366; /* Neon casino pink/red */
+            color: #FF3366; 
             font-size: 2.8em;
             letter-spacing: 4px;
             margin-bottom: 40px;
